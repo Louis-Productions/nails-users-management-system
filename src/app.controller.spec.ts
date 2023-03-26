@@ -15,8 +15,12 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return `status: "Healthy"`', () => {
+      expect(appController.healthCheck()).toEqual({
+        status: 'Healthy',
+        env: process.env.NODE_ENV || 'development',
+        something: 'Something...',
+      });
     });
   });
 });
