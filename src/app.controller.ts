@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpStatus } from '@nestjs/common';
 import { AppService } from './app.service';
+import { OnException } from './utils/exceptions/http.exceptions';
 
 @Controller('v1')
 export class AppController {
